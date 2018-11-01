@@ -17,7 +17,7 @@ class ListTeam extends Component {
     if (teams.length === 0) {
       return (
         <Text style={{ alignSelf: 'center', marginVertical: 200, fontSize: 20, color: '#006400' }}>
-          Nsemhum Time Disponível
+          Nemhum Time Disponível
         </Text>
       )
     }
