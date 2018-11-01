@@ -1,17 +1,34 @@
 import React, { Component } from 'react'
 import { View, Text, TouchableOpacity, AsyncStorage } from 'react-native'
-import { Header, Body, Title, Right, Icon } from 'native-base'
+import { Header, Body, Title, Right, Icon, Container, List } from 'native-base'
 import { Actions } from 'react-native-router-flux'
+import ListTeamItem from './ListTeamItem'
 
 class ListTeam extends Component {
+  state = { teams: [] }
+
   logout () {
     AsyncStorage.removeItem('token')
     Actions.login()
   }
 
+  renderListTeamItem () {
+    const { teams } = this.state 
+    if (teams.length === 0) {
+      return (
+        <Text style={{ alignSelf: 'center', marginVertical: 200, fontSize: 20, color: '#006400' }}>
+          Nsemhum Time Disponível
+        </Text>
+      )
+    }
+    return teams.map(team => {
+      return <ListTeamItem item={team} />
+    })
+  }
+
   render () {
     return (
-      <View>
+      <Container>
         <Header style={{ backgroundColor: '#006400' }} androidStatusBarColor='#006400'>
           <Body>
             <Title>Times</Title>
@@ -22,10 +39,13 @@ class ListTeam extends Component {
             </TouchableOpacity>
           </Right>
         </Header>
-        <Text>List Team</Text>
-      </View>
+        <List>
+          { this.renderListTeamItem() }
+        </List>
+      </Container>
     )
   }
+
 }
 
 export default ListTeam
