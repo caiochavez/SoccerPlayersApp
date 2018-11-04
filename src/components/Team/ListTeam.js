@@ -3,9 +3,10 @@ import { View, Text, TouchableOpacity, AsyncStorage } from 'react-native'
 import { Header, Body, Title, Right, Icon, Container, List } from 'native-base'
 import { Actions } from 'react-native-router-flux'
 import ListTeamItem from './ListTeamItem'
+import dataTeams from './data'
 
 class ListTeam extends Component {
-  state = { teams: [] }
+  state = { teams: dataTeams }
 
   logout () {
     AsyncStorage.removeItem('token')

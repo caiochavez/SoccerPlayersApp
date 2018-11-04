@@ -1,10 +1,10 @@
 import React from 'react'
-import { TouchableOpacity } from 'react-native'
 import { ListItem, Thumbnail, Left, Body, Text } from 'native-base'
+import { Actions } from 'react-native-router-flux'
 
 const ListTeamItem = ({ item }) => {
   return (
-    <ListItem thumbnail>
+    <ListItem thumbnail onPress={() => Actions.detailsTeam({ team: item })}>
       <Left>
         <Thumbnail square source={{ uri: item.photoData }} />
       </Left>
