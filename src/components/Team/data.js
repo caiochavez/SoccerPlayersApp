@@ -80,6 +80,13 @@ export default [
        nationality: 'País de Gales',
        position: 'attacker',
        photoData: 'http://futhead.cursecdn.com/static/img/17/players/173731.png' 
+     },
+     {
+       name: 'Benzema',
+       age: 33,
+       nationality: 'França',
+       position: 'attacker',
+       photoData: 'http://futhead.cursecdn.com/static/img/17/players/165153.png'
      }
     ]
   }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import { TouchableOpacity, Text } from 'react-native'
-import { Container, Header, Body, Title, Left, Icon, Thumbnail, Row, List, ListItem } from 'native-base'
+import { TouchableOpacity, Text, ScrollView, View } from 'react-native'
+import { Container, Header, Body, Title, Left, Icon, Thumbnail, List, ListItem } from 'native-base'
 import { Actions } from 'react-native-router-flux'
 
 class DetailsTeam extends Component {
@@ -52,14 +52,18 @@ class DetailsTeam extends Component {
             <Icon name='md-return-left' style={{ color: 'white' }} />
             </TouchableOpacity>
           </Left>
-          <Body>
-            <Row style={{ marginVertical: 4 }}>
+          <Body style={{ flexDirection: 'row' }}>
+            <View style={{paddingRight: 2 }}>
               <Thumbnail small source={{ uri: team.photoData }} style={{ paddingRight: 8 }} />
+            </View>
+            <View style={{ paddingLeft: 2 }}>
               <Title style={{ paddingLeft: 8 }}>{team.name}</Title>
-            </Row>
+            </View>
           </Body>
         </Header>
-        { this.renderListPlayers() }
+        <ScrollView>
+          { this.renderListPlayers() }
+        </ScrollView>
       </Container>
     )
   }

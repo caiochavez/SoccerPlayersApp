@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Text, TouchableOpacity, AsyncStorage } from 'react-native'
+import { View, Text, TouchableOpacity, ScrollView, AsyncStorage } from 'react-native'
 import { Header, Body, Title, Right, Icon, Container, List } from 'native-base'
 import { Actions } from 'react-native-router-flux'
 import ListTeamItem from './ListTeamItem'
@@ -40,9 +40,11 @@ class ListTeam extends Component {
             </TouchableOpacity>
           </Right>
         </Header>
-        <List>
-          { this.renderListTeamItem() }
-        </List>
+        <ScrollView>
+          <List>
+            { this.renderListTeamItem() }
+          </List>
+        </ScrollView>
       </Container>
     )
   }
