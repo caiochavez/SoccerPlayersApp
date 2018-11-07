@@ -94,8 +94,16 @@ class Login extends Component {
               secureTextEntry />
             </Item>
             { this.renderMsgError() }
-            <Content style={{ alignSelf: 'center', marginTop: 5 }}>
-              { this.renderButton() }
+            <Content style={{ flexDirection: 'column', alignSelf: 'center', marginTop: 5 }}>
+              <View>
+                { this.renderButton() }
+              </View>
+              <Text style={{ color: 'white', alignSelf: 'center', paddingVertical: 3}}>OU</Text>
+              <View>
+                <TouchableOpacity style={style.buttonStyle}>
+                  <Text style={style.textStyle}>Criar Conta</Text>
+                </TouchableOpacity>
+              </View>
             </Content>
           </Form>
         </Content>
