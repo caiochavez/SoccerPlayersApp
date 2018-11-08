@@ -49,7 +49,7 @@ class DetailsTeam extends Component {
         <Header style={{ backgroundColor: '#006400' }} androidStatusBarColor='#006400'>
           <Left>
             <TouchableOpacity onPress={() => Actions.listTeam()}>
-            <Icon name='md-return-left' style={{ color: 'white' }} />
+            <Icon name='arrow-back' style={{ color: 'white' }} />
             </TouchableOpacity>
           </Left>
           <Body style={{ flexDirection: 'row' }}>

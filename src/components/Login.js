@@ -79,7 +79,7 @@ class Login extends Component {
               <Input
               style={{ color: '#FFFFFF' }}
               placeholder='Nome de usuário'
-              placeholderTextColor='white'
+              placeholderTextColor='#C6C2C2'
               onChangeText={this.onChangeUsername.bind(this)}
               value={this.state.username} />
             </Item>
@@ -88,7 +88,7 @@ class Login extends Component {
               <Input
               style={{ color: '#FFFFFF' }}
               placeholder='Senha'
-              placeholderTextColor='white'
+              placeholderTextColor='#C6C2C2'
               onChangeText={this.onChangePassword.bind(this)}
               value={this.state.password}
               secureTextEntry />
@@ -101,7 +101,7 @@ class Login extends Component {
               <Text style={{ color: 'white', alignSelf: 'center', paddingVertical: 3}}>OU</Text>
               <View>
                 <TouchableOpacity style={style.buttonStyle}>
-                  <Text style={style.textStyle}>Criar Conta</Text>
+                  <Text style={style.textStyle} onPress={() => Actions.createUser()}>Criar Conta</Text>
                 </TouchableOpacity>
               </View>
             </Content>
