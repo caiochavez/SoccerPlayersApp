@@ -5,6 +5,7 @@ import Login from './components/Login'
 import ListTeam from './components/Team/ListTeam'
 import DetailsTeam from './components/Team/DetailsTeam'
 import CreateUser from './components/User/CreateUser'
+import CreateTeam from './components/Team/CreateTeam'
 
 const tokenExist = async () => {
   const token = await AsyncStorage.getItem('token')
@@ -29,6 +30,7 @@ const RouterComponent = () => {
         <Scene key='listTeam' component={ListTeam} hideNavBar onEnter={verifyUserLogged()} />
         <Scene key='detailsTeam' component={DetailsTeam} hideNavBar onEnter={verifyUserLogged()} />
         <Scene key='createUser' component={CreateUser} hideNavBar />
+        <Scene key='createTeam' component={CreateTeam} hideNavBar />
       </Scene>
     </Router>
   )

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { View, Text, TouchableOpacity, ScrollView, AsyncStorage } from 'react-native'
-import { Header, Body, Title, Right, Icon, Container, List, Item, Input } from 'native-base'
+import { Header, Body, Title, Right, Icon, Container, List, Item, Input, Fab } from 'native-base'
 import { Actions } from 'react-native-router-flux'
 import ListTeamItem from './ListTeamItem'
 import dataTeams from './data'
@@ -33,7 +33,7 @@ class ListTeam extends Component {
       if (teams.length === 0) {
         return (
           <Text style={{ alignSelf: 'center', marginVertical: 200, fontSize: 20, color: '#006400' }}>
-            Nemhum Time Disponível
+            Nenhum Time Disponível
           </Text>
         )
       } else {
@@ -82,6 +82,13 @@ class ListTeam extends Component {
             { this.renderListTeamItem() }
           </List>
         </ScrollView>
+        <Fab 
+        position='bottomRight'
+        containerStyle={{}}
+        style={{ backgroundColor: '#006400' }}
+        onPress={() => Actions.createTeam()}>
+          <Icon name='add' />
+        </Fab>
       </Container>
     )
   }
